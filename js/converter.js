@@ -28,8 +28,7 @@ const HIEROGLYPHS = {
 };
 
 //TODO: Not yet implemented
-const HIRAGANAS = {
-};
+const HIRAGANAS = {};
 
 function hiraganaToHieroglyph(source) {
     let result = "";
@@ -44,8 +43,10 @@ function hiraganaToHieroglyph(source) {
                 i++;
             }
         }
+        if (HIEROGLYPHS[character]) {
+            result += HIEROGLYPHS[character];
+        }
         i++;
-        result += HIEROGLYPHS[character];
     }
     return result;
 }
