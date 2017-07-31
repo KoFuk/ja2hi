@@ -13,8 +13,8 @@ When stable version is released, it will deployed to chronoscoper.com
 
 ### Supported operation
 current support state is following:
--[x] Convert hiragana to hieroglyph
--[ ] Convert hieroglyph to hiragana
+- [x] Convert hiragana to hieroglyph
+- [ ] Convert hieroglyph to hiragana
 
 ### Contributing
 Character mapping may contain mistake.  
