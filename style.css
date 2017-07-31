@@ -1,0 +1,46 @@
+* {
+    font-family: 'Questrial', sans-serif;
+    font-size: 20px;
+}
+
+header {
+    height: 50px;
+    width: 100%;
+    background-color: #dcdcdc;
+    font-size: 35px;
+    padding-left: 10px;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button-shadow-style {
+    margin: 10px;
+    padding: 10px 10px;
+    background: #0077d8;
+    color: #FFF;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button-shadow-style:active {
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
+    background: #0095ff;
+    border-bottom: none;
+}
+
+.textarea-style {
+    height: 80px;
+    width: 200px;
+    font-size: 30px;
+}
+
+a {
+    color: black;
+}
+
+main {
+    margin-top: 55px;
+    padding: 20px;
+}

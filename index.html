@@ -2,17 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <title>Japanese To Hieroglyph</title>
+    <link type="text/css" href="style.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
 </head>
 <body>
-<form>
-    <label for="source">Input in hiragana character: <br></label>
-    <textarea id="source"></textarea>
-    <input type="button" value="CONVERT" onclick="convert()"><br>
-    <label for="result">Result:<br></label>
-    <textarea id="result"></textarea>
-</form>
+<header>
+    ja2hi Web Tool
+</header>
+<main>
+    <form>
+        <label for="source">Input in hiragana character: <br></label>
+        <div>
+            <textarea id="source" class="textarea-style"></textarea>
+            <input type="button" value="CONVERT" onclick="convert()" class="button-shadow-style">
+        </div>
+        <label for="result">Result:<br></label>
+        <textarea id="result" class="textarea-style"></textarea>
+    </form>
 
+    <p>
+        Source code: <a href="https://github.com/KoFuk/ja2hi">ja2hi</a>, created by <a
+            href="http://www.chronoscoper.com/people/kofuk">KoFuk</a> on Chronoscope
+    </p>
+</main>
 <script src="js/converter.js"></script>
 <script src="js/main.js"></script>
 </body>
