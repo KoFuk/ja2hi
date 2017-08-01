@@ -15,14 +15,21 @@
     <div id="error" class="error_view">
         Finished converting with some issue; unexpected result might be displayed.
     </div>
+    <div id="beta_warning" class="error_view">
+        Converting hieroglyph to Japanese is unstable version.<br>
+        It may contain some errors and defects.
+    </div>
     <form>
-        <label for="source">Input in hiragana character: <br></label>
+        <label for="japanese">Hiragana: <br></label>
         <div>
-            <textarea id="source" class="textarea-style"></textarea>
-            <input type="button" value="CONVERT" onclick="convert()" class="button-shadow-style">
+            <textarea id="japanese" class="textarea-style"></textarea>
+            <input type="button" value="↓CONVERT" onclick="convertJapanese()"
+                   class="button-shadow-style">
+            <input type="button" value="↑CONVERT" onclick="convertHieroglyph()"
+                   class="button-shadow-style">
         </div>
-        <label for="result">Result:<br></label>
-        <textarea id="result" class="textarea-style"></textarea>
+        <label for="hieroglyph">Hieroglyph:<br></label>
+        <textarea id="hieroglyph" class="textarea-style"></textarea>
     </form>
 
     <p>
