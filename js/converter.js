@@ -36,12 +36,12 @@ const HIEROGLYPHS = {
 //TODO: Not yet implemented
 const HIRAGANAS = {};
 
-function hiraganaToHieroglyph(source) {
-    let result = "";
+function japaneseToHieroglyph(source, target) {
+    let result = true;
+    let converted = "";
     let i = 0;
     while (i < source.length) {
         let character = source[i];
-        console.log("character is " + character);
         if (i + 1 < source.length) {
             const nextChar = source[i + 1];
             if (nextChar === "ゃ" || nextChar === "ゅ" || nextChar === "ょ") {
@@ -49,11 +49,15 @@ function hiraganaToHieroglyph(source) {
                 i++;
             }
         }
+        console.log("handling character: " + character);
         if (HIEROGLYPHS[character]) {
-            result += HIEROGLYPHS[character];
+            converted += HIEROGLYPHS[character];
+        } else {
+            result = false
         }
         i++;
     }
+    target.value = converted;
     return result;
 }
 

@@ -36,6 +36,16 @@ header {
     font-size: 30px;
 }
 
+.error_view {
+    background-color: #ffe3e6;
+    color: #ff0000;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    display: none;
+}
+
 a {
     color: black;
 }
