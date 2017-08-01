@@ -2,7 +2,10 @@
 
 ja2hi is a simple web tool which allows you to convert hiragana to hieroglyph.
 This tool is currently beta stage so some function may not work properly.
-When stable version is released, it will deployed to chronoscoper.com
+
+## Try
+This tool is now available on `chronoscoper.com`.
+To try this tool, visit [Chronoscope project page](http://www.chronoscoper.com/ja2hi)
 
 -----
 
@@ -14,7 +17,7 @@ When stable version is released, it will deployed to chronoscoper.com
 ### Supported operation
 current support state is following:
 - [x] Convert hiragana to hieroglyph
-- [ ] Convert hieroglyph to hiragana
+- [x] Convert hieroglyph to hiragana **BETA**
 
 ### Contributing
 Character mapping may contain mistake.  
