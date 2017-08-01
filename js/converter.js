@@ -83,41 +83,59 @@ function japaneseToHieroglyph(source, target) {
         }
         console.log("handling character: " + character);
         if (HIEROGLYPHS[character]) {
-            converted += HIEROGLYPHS[character];
+            converted += HIEROGLYPHS[character] + " ";
         } else {
             result = false
         }
         i++;
     }
+    if (converted.endsWith(" ")) {
+        converted = converted.substring(0, converted.length - 1);
+    }
     target.value = converted;
     return result;
+}
+
+/**
+ *
+ * @returns {boolean} returns true if string is null or "" otherwise false.
+ */
+String.prototype.isEmpty = function () {
+    return !this[0]
+};
+
+if (!String.prototype.endsWith) {
+    String.prototype.endsWith = function (searchString, position) {
+        var subjectString = this.toString();
+        if (typeof position !== 'number'
+            || !isFinite(position)
+            || Math.floor(position) !== position
+            || position > subjectString.length) {
+            position = subjectString.length;
+        }
+        position -= searchString.length;
+        var lastIndex = subjectString.lastIndexOf(searchString, position);
+        return lastIndex !== -1 && lastIndex === position;
+    };
 }
 
 function hieroglyphToJapanese(source, target) {
     let result = true;
     let converted = "";
 
-    let i = 0;
-    const sourceLength = source.length;
-    while (i < sourceLength) {
-        let charCount = 1;
-        let charAdded = false;
-        while (charCount <= 3
-        && i + charCount <= sourceLength) {
-            if (HIRAGANAS[source.substring(i, i + charCount)]) {
-                converted += HIRAGANAS[source.substring(i, i + charCount)];
-                i += charCount;
-                charAdded = true;
-                break;
-            } else {
-                charCount++;
-            }
+    source.split(" ").forEach(function (t) {
+        let c = t;
+        if (c.endsWith(" ")) {
+            c = c.substring(0, c.length - 1);
         }
-        if (!charAdded) {
-            i++;
+        if (c.isEmpty()) {
+            return;
+        }
+        console.log("handling string: " + t);
+        if (HIRAGANAS[c]) {
+            result += HIRAGANAS[c];
+        } else {
             result = false;
         }
-    }
-    target.value = converted;
-    return result;
+    })
 }
