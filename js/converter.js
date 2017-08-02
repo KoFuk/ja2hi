@@ -133,9 +133,11 @@ function hieroglyphToJapanese(source, target) {
         }
         console.log("handling string: " + t);
         if (HIRAGANAS[c]) {
-            result += HIRAGANAS[c];
+            converted += HIRAGANAS[c];
         } else {
             result = false;
         }
-    })
+    });
+
+    target.value = converted;
 }
