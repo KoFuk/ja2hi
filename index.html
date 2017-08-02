@@ -6,6 +6,7 @@
     <title>Japanese To Hieroglyph</title>
     <link type="text/css" href="style.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 <header>
@@ -13,7 +14,7 @@
 </header>
 <main>
     <div id="error" class="error_view">
-        Finished converting with some issue; unexpected result might be displayed.
+        Finished converting with issue(s); unexpected result might be displayed.
     </div>
     <div id="beta_warning" class="error_view">
         Converting hieroglyph to Japanese is unstable version.<br>
@@ -23,21 +24,34 @@
         <label for="japanese">Hiragana: <br></label>
         <div>
             <textarea id="japanese" class="textarea-style"></textarea>
-            <input type="button" value="↓CONVERT" onclick="convertJapanese()"
-                   class="button-shadow-style">
-            <input type="button" value="↑CONVERT" onclick="convertHieroglyph()"
-                   class="button-shadow-style">
+            <input type="button" value="arrow_downward" onclick="convertWithSelectedDirection()"
+                   class="rounded_button material-icons" id="convert">
+            <input type="button" value="SWITCH" onclick="switchConvertDirection()"
+                   class="button-shadow-style" id="flip">
         </div>
         <label for="hieroglyph">Hieroglyph:<br></label>
         <textarea id="hieroglyph" class="textarea-style"></textarea>
     </form>
 
     <p>
-        Source code: <a href="https://github.com/KoFuk/ja2hi">ja2hi</a>, created by <a
+        Source code: <a href="https://github.com/KoFuk/ja2hi">KoFuk/ja2hi</a>, created by <a
             href="http://www.chronoscoper.com/people/kofuk">KoFuk</a> on Chronoscope
     </p>
+
+    <div style="font-size: 24px" onclick="expandLicenseSection()">License info
+        <i class="material-icons">expand_more</i>
+    </div>
+    <div id="license" style="display: none">
+        This tool contains following open source software:
+        <ul>
+            <li>Velocity.js</li>
+            <li>Material Icons</li>
+        </ul>
+    </div>
+
 </main>
 <script src="js/converter.js"></script>
 <script src="js/main.js"></script>
+<script src="js/external/velocity.min.js"></script>
 </body>
 </html>
